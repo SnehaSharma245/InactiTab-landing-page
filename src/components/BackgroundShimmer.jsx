@@ -8,14 +8,14 @@ const BackgroundShimmer = () => {
   // Generate stars only on the client side to avoid hydration mismatch
   useEffect(() => {
     const generateStars = () => {
-      return Array(25)
+      return Array(20)
         .fill(0)
         .map(() => ({
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          width: `${Math.random() * 3 + 2}px`,
-          height: `${Math.random() * 3 + 2}px`,
-          opacity: Math.random() * 0.6 + 0.4,
+          width: `${Math.random() * 2 + 1}px`,
+          height: `${Math.random() * 2 + 1}px`,
+          opacity: Math.random() * 0.4 + 0.2,
           animationDuration: `${Math.random() * 15 + 20}s`,
           animationDelay: `${Math.random() * 5}s`,
         }));
@@ -39,33 +39,33 @@ const BackgroundShimmer = () => {
 
       {/* Top-left pulse with reduced opacity */}
       <div
-        className="absolute -top-20 -left-20 w-[35rem] h-[35rem] rounded-full"
+        className="absolute -top-20 -left-20 w-[25rem] h-[25rem] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(66,135,245,0.4) 0%, rgba(26,115,232,0.15) 40%, transparent 50%)",
-          opacity: 0.1,
+            "radial-gradient(circle, rgba(66,135,245,0.3) 0%, rgba(26,115,232,0.1) 40%, transparent 50%)",
+          opacity: 0.08,
           animation: "pulse 8s infinite ease-in-out",
         }}
       ></div>
 
       {/* Bottom-right pulse with reduced opacity */}
       <div
-        className="absolute bottom-0 right-0 w-[30rem] h-[30rem] rounded-full"
+        className="absolute bottom-0 right-0 w-[20rem] h-[20rem] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(66,135,245,0.35) 0%, rgba(26,115,232,0.2) 50%, transparent 75%)",
-          opacity: 0.15,
+            "radial-gradient(circle, rgba(66,135,245,0.25) 0%, rgba(26,115,232,0.1) 50%, transparent 75%)",
+          opacity: 0.1,
           animation: "pulse 8s infinite ease-in-out 2s",
         }}
       ></div>
 
       {/* Center pulse with higher opacity */}
       <div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[45rem] h-[45rem] rounded-full"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(66,135,245,0.4) 0%, rgba(26,115,232,0.15) 40%, transparent 50%)",
-          opacity: 0.2,
+            "radial-gradient(circle, rgba(66,135,245,0.3) 0%, rgba(26,115,232,0.1) 40%, transparent 50%)",
+          opacity: 0.15,
           animation: "pulse 15s infinite ease-in-out 1s",
         }}
       ></div>
@@ -81,7 +81,7 @@ const BackgroundShimmer = () => {
             width: star.width,
             height: star.height,
             opacity: star.opacity,
-            boxShadow: "0 0 10px rgba(66,135,245,0.6)",
+            boxShadow: "0 0 5px rgba(66,135,245,0.5)",
             animation: `float ${star.animationDuration} infinite ease-in-out ${star.animationDelay}`,
           }}
         ></div>
