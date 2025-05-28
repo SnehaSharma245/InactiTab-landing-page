@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   const handleDownload = () => {
-    const fileUrl = process.env.GITHUB_RELEASES_URL;
+    const fileUrl = process.env.NEXT_PUBLIC_GITHUB_RELEASE_URL;
 
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
