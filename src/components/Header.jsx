@@ -28,7 +28,7 @@ function Header() {
           {/* Logo and Website Name */}
           <div
             onClick={scrollToTop}
-            className="flex items-center space-x-3 cursor-pointer transform transition-all duration-300"
+            className="flex items-center sm:space-x-3 cursor-pointer transform transition-all duration-300"
           >
             <div className="relative w-8 h-8 transition-transform duration-300 ">
               <Image
