@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Chrome } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   const handleDownload = () => {
@@ -51,13 +52,15 @@ export default function HeroSection() {
                 Add to Chrome
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="px-5 py-2 text-sm md:text-base rounded-lg border border-[#1a73e8] text-[#1a73e8] hover:bg-[#1a73e8]/10 cursor-pointer"
+
+              <Link
+                href="https://github.com/SnehaSharma245/InactiTab-landing-page"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-lg border border-[#1a73e8] bg-transparent px-5 py-2 text-sm md:text-base font-medium text-[#1a73e8] hover:bg-[#1a73e8]/10 transition-all duration-300 cursor-pointer"
               >
                 View on GitHub
-              </Button>
+              </Link>
             </div>
           </div>
 
