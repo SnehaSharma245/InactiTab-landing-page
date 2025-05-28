@@ -3,7 +3,7 @@
 import BackgroundShimmer from "@/components/BackgroundShimmer";
 import HeroSection from "@/components/landing-page/HeroSection";
 import FeaturesSection from "@/components/landing-page/FeaturesSection";
-import BenefitsSection from "@/components/landing-page/BenefitsSection";
+import Installation from "@/components/landing-page/Installation";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       {/* Main content sections */}
       <HeroSection />
       <FeaturesSection />
-      <BenefitsSection />
+      <Installation />
     </main>
   );
 }
