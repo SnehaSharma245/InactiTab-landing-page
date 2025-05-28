@@ -4,6 +4,15 @@ import { ArrowRight, Chrome } from "lucide-react";
 import Image from "next/image";
 
 export default function HeroSection() {
+  const handleDownload = () => {
+    const fileUrl = process.env.GITHUB_RELEASES_URL;
+
+    const anchor = document.createElement("a");
+    anchor.href = fileUrl;
+    anchor.download = "dist.zip"; // File name user ke PC me
+    anchor.click();
+    anchor.remove();
+  };
   return (
     <section className="relative min-h-screen flex items-center">
       <div className="container mx-auto px-4">
@@ -35,6 +44,7 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 className="bg-[#1a73e8] hover:bg-[#1765cc] text-white px-6 py-5 text-base md:text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleDownload}
               >
                 <Chrome className="w-5 h-5 mr-2" />
                 Add to Chrome
