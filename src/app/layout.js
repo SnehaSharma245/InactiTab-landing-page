@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 // Create OG image path with full URL to ensure it works on social media
-const ogImageUrl = "https://inactitab.vercel.app/icon2.png";
-const twitterImageUrl = "https://inactitab.vercel.app/icon2.png";
+const ogImageUrl = "/twitter_icon.jpg";
+const twitterImageUrl = "=/twitter_icon.jpg";
 
 export const metadata = {
   title: "InactiTab - Smart Tab Management for Chrome",
