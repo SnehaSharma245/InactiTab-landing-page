@@ -52,7 +52,7 @@
 
 1. **Download the Extension**
 
-   - Go to [GitHub Releases](https://github.com/yourusername/InactiTab2/releases)
+   - Go to [GitHub Releases](https://github.com/SnehaSharma245/InactiTab-landing-page/releases/tag/v1.0.0)
    - Download the latest `inactitab.zip` file
    - Extract the ZIP file to a folder on your computer
 
@@ -188,7 +188,7 @@ InactiTab automatically protects tabs from being tracked for inactivity based on
 ### Getting Help
 
 - 🌐 Visit our [Landing Page](https://inactitab.vercel.app) for demos and tutorials
-- 📧 Report issues on [GitHub Issues](https://github.com/yourusername/InactiTab2/issues)
+- 📧 Report issues on [GitHub Issues](https://github.com/SnehaSharma245/InactiTab-landing-page/releases/tag/v1.0.0)
 - 💬 Join our community discussions
 
 ---
@@ -201,8 +201,8 @@ We welcome contributions!
 
 ```bash
 # Clone and setup
-git clone https://github.com/yourusername/InactiTab2.git
-cd InactiTab2
+git clone https://github.com/SnehaSharma245/InactiTab-landing-page.git
+cd InactiTab-landing-page
 npm install
 
 # Start development
