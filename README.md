@@ -1,9 +1,9 @@
-# 🔥 InactiTab - Smart Tab Management Extension
+# 🔥 InactiTab Landing Page
 
 <div align="center">
   <img src="public/icon2.png" alt="InactiTab Logo" width="128" height="128">
 
-**🌐 [Live Demo & Landing Page](https://inactitab.vercel.app)**
+**🌐 [Live Landing Page](https://inactitab.vercel.app)**
 
 </div>
 
@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-**InactiTab** is a powerful Chrome extension designed to automatically manage your browser tabs by detecting inactive tabs and either putting them to sleep or closing them automatically. It helps improve browser performance, reduce memory usage, and keep your workspace organized.
+This is the official landing page for **InactiTab** - a powerful Chrome extension designed to automatically manage your browser tabs by detecting inactive tabs and either putting them to sleep or closing them automatically. The landing page provides users with comprehensive information about the extension, its features, and step-by-step installation instructions.
 
 ### 🎯 Key Features
 
@@ -195,12 +195,16 @@ InactiTab automatically protects tabs from being tracked for inactivity based on
 
 ## 🤝 Contributing
 
-We welcome contributions!
+We welcome contributions to improve the landing page!
 
-### Development Setup
+### Main Extension Repository
+
+For contributions to the Chrome extension itself, please visit: **[InactiTab Extension Repository](https://github.com/SnehaSharma245/InactiTab)**
+
+### Landing Page Development Setup
 
 ```bash
-# Clone and setup
+# Clone and setup landing page
 git clone https://github.com/SnehaSharma245/InactiTab-landing-page.git
 cd InactiTab-landing-page
 npm install
@@ -212,6 +216,21 @@ npm run dev
 npm run build
 ```
 
+### Development Workflow
+
+1. **Fork the Repository**
+2. **Create Feature Branch**: `git checkout -b feature/amazing-feature`
+3. **Commit Changes**: `git commit -m 'Add amazing feature'`
+4. **Push to Branch**: `git push origin feature/amazing-feature`
+5. **Open Pull Request**
+
+### Code Standards
+
+- **ESLint** - Follow the configured linting rules
+- **Prettier** - Use consistent code formatting
+- **Component Structure** - Keep components small and focused
+- **Accessibility** - Ensure all interactive elements are accessible
+
 ---
 
 ## 📄 License
@@ -222,18 +241,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Thanks to all contributors and beta testers
-- Icons by [Lucide](https://lucide.dev/)
-- Built with ❤️ using React and Tailwind CSS
+- **Next.js Team** - For the amazing React framework
+- **Tailwind CSS** - For the utility-first CSS framework
+- **Lucide** - For the beautiful icon library
+- **Vercel** - For seamless deployment and hosting
+- **Community** - For feedback and contributions
 
 ---
 
 <div align="center">
   
-  **⭐ If you find InactiTab helpful, please consider giving it a star!**
+  **⭐ If you find this landing page helpful, please consider giving it a star!**
   
-  **🌐 [Visit Landing Page](https://inactitab.vercel.app) | 📦 [Download Latest Release](https://github.com/SnehaSharma245/InactiTab-landing-page/releases/tag/v1.0.0)**
+  **🌐 [Visit Live Site](https://inactitab.vercel.app) | 📦 [Main Extension Repo](https://github.com/SnehaSharma245/InactiTab)**
   
-  Made with ❤️ by [Your Name]
+  Made with ❤️ by [Sneha Sharma](https://github.com/SnehaSharma245)
   
 </div>
