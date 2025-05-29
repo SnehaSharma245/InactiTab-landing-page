@@ -72,19 +72,27 @@ const installationSteps = [
 
 function Installation() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState("right"); // Track animation direction
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
   const nextStep = () => {
+    setDirection("right");
     setCurrentStep((prev) =>
       prev === installationSteps.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevStep = () => {
+    setDirection("left");
     setCurrentStep((prev) =>
       prev === 0 ? installationSteps.length - 1 : prev - 1
     );
+  };
+
+  const goToStep = (stepIndex) => {
+    setDirection(stepIndex > currentStep ? "right" : "left");
+    setCurrentStep(stepIndex);
   };
 
   const openImageModal = (image) => {
@@ -105,56 +113,100 @@ function Installation() {
           </p>
         </div>
 
-        {/* Desktop/Tablet View - Side-by-side carousel */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-xl overflow-hidden bg-[#0f1a34]/50 backdrop-blur-sm p-6 mb-8 border border-[#1a73e8]/10">
-          {/* Left side - Step information */}
-          <div className="text-left">
-            <div className="inline-block px-3 py-1 mb-4 rounded-full text-xs font-medium bg-[#1a73e8] text-white">
-              {installationSteps[currentStep].step}
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-white">
-              {installationSteps[currentStep].title}
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              {installationSteps[currentStep].description}
-            </p>
+        {/* Desktop/Tablet View */}
+        <div className="hidden md:block">
+          {/* Main Carousel Container */}
+          <div className="rounded-xl overflow-hidden bg-[#0f1a34]/50 backdrop-blur-sm p-6 mb-4 border border-[#1a73e8]/10">
+            <div className="relative h-[300px]">
+              {" "}
+              {/* Fixed height container */}
+              {installationSteps.map((step, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute top-0 left-0 w-full transition-all duration-500 ease-in-out ${
+                    idx === currentStep
+                      ? "opacity-100 transform translate-x-0"
+                      : idx < currentStep ||
+                        (currentStep === 0 &&
+                          idx === installationSteps.length - 1)
+                      ? `opacity-0 transform -translate-x-full ${
+                          direction === "right"
+                            ? "-translate-x-full"
+                            : "translate-x-full"
+                        }`
+                      : `opacity-0 transform translate-x-full ${
+                          direction === "right"
+                            ? "translate-x-full"
+                            : "-translate-x-full"
+                        }`
+                  }`}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    {/* Left side - Step information */}
+                    <div className="text-left">
+                      <div className="inline-block px-3 py-1 mb-4 rounded-full text-xs font-medium bg-[#1a73e8] text-white">
+                        {step.step}
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-white">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
 
-            {/* Navigation controls */}
-            <div className="flex items-center space-x-4">
-              <Button
-                onClick={prevStep}
-                variant="outline"
-                size="icon"
-                className="rounded-full h-10 w-10 bg-[#0c1428]/50 border border-[#1a73e8]/30 text-[#1a73e8] 
-               hover:bg-[#1a73e8]/20 transition duration-200 ease-in-out cursor-pointer"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              <div className="text-xs text-gray-400">
-                Step {currentStep + 1} of {installationSteps.length}
-              </div>
-              <Button
-                onClick={nextStep}
-                variant="outline"
-                size="icon"
-                className="rounded-full h-10 w-10 bg-[#0c1428]/50 border border-[#1a73e8]/30 text-[#1a73e8] 
-               hover:bg-[#1a73e8]/20 transition duration-200 ease-in-out cursor-pointer"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
+                    {/* Right side - Step image */}
+                    <div className="relative h-[300px] bg-[#0c1428]/50 rounded-lg overflow-hidden border border-[#1a73e8]/10">
+                      <Image
+                        src={step.image}
+                        alt={`Installation step ${idx + 1}`}
+                        fill
+                        className="object-contain p-4 select-none pointer-events-none"
+                        draggable="false"
+                        unselectable="on"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right side - Step image */}
-          <div className="relative h-[300px] bg-[#0c1428]/50 rounded-lg overflow-hidden border border-[#1a73e8]/10">
-            <Image
-              src={installationSteps[currentStep].image}
-              alt={`Installation step ${currentStep + 1}`}
-              fill
-              className="object-contain p-4 select-none pointer-events-none"
-              draggable="false"
-              unselectable="on"
-            />
+          {/* Navigation Controls - Moved below the content */}
+          <div className="flex items-center justify-center space-x-4 mb-4">
+            <Button
+              onClick={prevStep}
+              variant="outline"
+              size="icon"
+              className="rounded-full h-10 w-10 bg-[#0c1428]/50 border border-[#1a73e8]/30 text-[#1a73e8] 
+              hover:bg-[#1a73e8]/20 transition duration-200 ease-in-out cursor-pointer"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+
+            {/* Pagination dots */}
+            <div className="flex justify-center items-center space-x-2 mt-2">
+              {installationSteps.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentStep === idx ? "bg-[#1a73e8] w-4" : "bg-gray-600"
+                  }`}
+                  onClick={() => goToStep(idx)}
+                  aria-label={`Go to step ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <Button
+              onClick={nextStep}
+              variant="outline"
+              size="icon"
+              className="rounded-full h-10 w-10 bg-[#0c1428]/50 border border-[#1a73e8]/30 text-[#1a73e8] 
+              hover:bg-[#1a73e8]/20 transition duration-200 ease-in-out cursor-pointer"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
           </div>
         </div>
 
@@ -214,20 +266,6 @@ function Installation() {
                 {step.description}
               </p>
             </div>
-          ))}
-        </div>
-
-        {/* Pagination dots for desktop */}
-        <div className="hidden md:flex justify-center items-center space-x-2 mt-6">
-          {installationSteps.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-2 h-2 rounded-full transition-all ${
-                currentStep === idx ? "bg-[#1a73e8] w-4" : "bg-gray-600"
-              }`}
-              onClick={() => setCurrentStep(idx)}
-              aria-label={`Go to step ${idx + 1}`}
-            />
           ))}
         </div>
       </div>
