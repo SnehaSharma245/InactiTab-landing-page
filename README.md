@@ -232,7 +232,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   
   **⭐ If you find InactiTab helpful, please consider giving it a star!**
   
-  **🌐 [Visit Landing Page](https://inactitab.vercel.app) | 📦 [Download Latest Release](https://github.com/yourusername/InactiTab2/releases)**
+  **🌐 [Visit Landing Page](https://inactitab.vercel.app) | 📦 [Download Latest Release](https://github.com/SnehaSharma245/InactiTab-landing-page/releases/tag/v1.0.0)**
   
   Made with ❤️ by [Your Name]
   
