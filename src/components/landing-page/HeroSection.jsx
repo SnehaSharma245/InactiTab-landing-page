@@ -10,7 +10,7 @@ export default function HeroSection() {
 
     const anchor = document.createElement("a");
     anchor.href = fileUrl;
-    anchor.download = "dist.zip"; // File name user ke PC me
+    anchor.download = "inactitab.zip"; // File name user ke PC me
     anchor.click();
     anchor.remove();
   };
