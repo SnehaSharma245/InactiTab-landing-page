@@ -25,10 +25,18 @@ export const metadata = {
     title: "InactiTab - Smart Tab Management for Chrome",
     description:
       "Automatically manage inactive tabs to boost browser performance and productivity",
-    url: "https://inacti-tab.vercel.app",
+    url: "https://inactitab.vercel.app",
     siteName: "InactiTab",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://inactitab.vercel.app/icon2.png",
+        width: 512,
+        height: 512,
+        alt: "InactiTab Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -36,6 +44,7 @@ export const metadata = {
     description:
       "Boost browser productivity by automatically managing inactive tabs",
     creator: "@SnehaDevs",
+    images: ["https://inactitab.vercel.app/icon2.png"],
   },
   robots: {
     index: true,
