@@ -106,6 +106,8 @@ InactiTab automatically protects tabs from being tracked for inactivity based on
 #### 💤 Inactive Tab
 
 - **Sleeping Tabs** - View tabs put to sleep mode
+- **CPU Usage Monitoring** - See real-time CPU usage for inactive tabs
+- **Bulk Selection** - Select multiple inactive tabs and close them all at once
 - **Quick Actions** - Visit or close tabs directly
 - **Status Indicators** - Visual indicators for protected vs sleeping tabs
 
